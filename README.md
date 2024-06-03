@@ -1,2 +1,3 @@
-# 2024MW_Hotel_Grouper
-Help coordinate group hotel bookings.
+# 2024MW Hotel Grouper
+
+

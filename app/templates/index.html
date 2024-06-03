@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Booking</title>
+</head>
+<body>
+    <h1>Hotel Booking Form</h1>
+    <form action="{{ url_for('submit') }}" method="post">
+        <input type="text" name="name" placeholder="Your Name" required><br>
+        <input type="email" name="email" placeholder="Your Email" required><br>
+        <select name="hotel_choice">
+            <option value="Motel 6">Motel 6 - $60</option>
+            <!-- Add other hotels here -->
+        </select><br>
+        <input type="date" name="date" required><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
