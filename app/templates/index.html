@@ -18,40 +18,43 @@
 
         <h2>Select Hotels:</h2>
         <div class="hotels">
-            <label><input type="checkbox" name="hotels" value="Motel 6"> Motel 6</label>
-            <label><input type="checkbox" name="hotels" value="Travelodge"> Travelodge</label>
-            <label><input type="checkbox" name="hotels" value="Super 8"> Super 8</label>
-            <label><input type="checkbox" name="hotels" value="Microtel Inn & Suites"> Microtel Inn & Suites</label>
-            <label><input type="checkbox" name="hotels" value="Red Roof Inn"> Red Roof Inn</label>
-            <label><input type="checkbox" name="hotels" value="Best Western"> Best Western</label>
-            <label><input type="checkbox" name="hotels" value="Holiday Inn Express"> Holiday Inn Express</label>
-            <label><input type="checkbox" name="hotels" value="Hyatt Place"> Hyatt Place</label>
-            <label><input type="checkbox" name="hotels" value="Marriott Hotels"> Marriott Hotels</label>
-            <label><input type="checkbox" name="hotels" value="Hilton Garden Inn"> Hilton Garden Inn</label>
-            <label>
-                <input type="checkbox" name="hotels" value="Other 1"> Other 1
-                <input type="text" name="other_hotels[]" placeholder="Enter other hotel">
-            </label>
-            <label>
-                <input type="checkbox" name="hotels" value="Other 2"> Other 2
-                <input type="text" name="other_hotels[]" placeholder="Enter other hotel">
-            </label>
-            <label>
-                <input type="checkbox" name="hotels" value="Other 3"> Other 3
-                <input type="text" name="other_hotels[]" placeholder="Enter other hotel">
-            </label>
+            <div class="hotel-row">
+                <label><input type="checkbox" name="hotels" value="Motel 6"> Motel 6</label>
+                <label><input type="checkbox" name="hotels" value="Travelodge"> Travelodge</label>
+                <label><input type="checkbox" name="hotels" value="Super 8"> Super 8</label>
+                <label><input type="checkbox" name="hotels" value="Microtel Inn & Suites"> Microtel Inn & Suites</label>
+                <label><input type="checkbox" name="hotels" value="Red Roof Inn"> Red Roof Inn</label>
+            </div>
+            <div class="hotel-row">
+                <label><input type="checkbox" name="hotels" value="Best Western"> Best Western</label>
+                <label><input type="checkbox" name="hotels" value="Holiday Inn Express"> Holiday Inn Express</label>
+                <label><input type="checkbox" name="hotels" value="Hyatt Place"> Hyatt Place</label>
+                <label><input type="checkbox" name="hotels" value="Marriott Hotels"> Marriott Hotels</label>
+                <label><input type="checkbox" name="hotels" value="Hilton Garden Inn"> Hilton Garden Inn</label>
+            </div>
+            <div class="hotel-row">
+                <label><input type="checkbox" name="hotels" value="Other 1"> Other 1
+                    <input type="text" name="other_hotels[]" placeholder="Enter other hotel">
+                </label>
+                <label><input type="checkbox" name="hotels" value="Other 2"> Other 2
+                    <input type="text" name="other_hotels[]" placeholder="Enter other hotel">
+                </label>
+                <label><input type="checkbox" name="hotels" value="Other 3"> Other 3
+                    <input type="text" name="other_hotels[]" placeholder="Enter other hotel">
+                </label>
+            </div>
         </div>
 
         <h2>Select Dates:</h2>
         <div class="dates">
             {% for day in range(1, 23, 2) %}
                 <div class="date-row">
-                    <label>
+                    <label class="date-label">
                         <input type="checkbox" name="dates" value="7/{{ day }}/2024"> 7/{{ day }}/2024
                         <input type="text" name="date_notes[]" placeholder="Optional note for this day" maxlength="300">
                     </label>
                     {% if day+1 <= 22 %}
-                    <label>
+                    <label class="date-label">
                         <input type="checkbox" name="dates" value="7/{{ day+1 }}/2024"> 7/{{ day+1 }}/2024
                         <input type="text" name="date_notes[]" placeholder="Optional note for this day" maxlength="300">
                     </label>
@@ -69,7 +72,7 @@
             <thead>
                 <tr>
                     <th>Hotel</th>
-                    <th>Times Selected</th>
+                    <th>Number of Bookings</th>
                 </tr>
             </thead>
             <tbody>

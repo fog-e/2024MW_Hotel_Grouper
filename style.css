@@ -25,31 +25,48 @@ button:hover {
     background-color: #45a049;
 }
 
-.hotels, .dates {
+.hotels {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
-.hotels label, .dates label {
-    width: 100%;
-    margin: 5px 0;
+.hotel-row {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+}
+
+.hotels label {
+    margin: 5px 10px;
+}
+
+.dates {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
 }
 
 .date-row {
     display: flex;
     justify-content: space-between;
+    margin: 5px 0;
 }
 
-.hotels label input[type="text"], .dates label input[type="text"] {
-    margin-left: 10px;
-    flex-grow: 1;
+.date-label {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 10px;
+}
+
+.date-label input[type="text"] {
+    margin-top: 5px;
 }
 
 .hotel-popularity table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
 .hotel-popularity th, .hotel-popularity td {
