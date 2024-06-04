@@ -34,7 +34,7 @@ button:hover {
 .hotel-row {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
+    margin: 20px 0;  /* Increased margin for more space between rows */
 }
 
 .hotels label {
@@ -52,7 +52,7 @@ button:hover {
 .date-row {
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
+    margin: 20px 0;  /* Increased margin for more space between rows */
 }
 
 .date-label {
