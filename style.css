@@ -33,7 +33,7 @@ button:hover {
 
 .hotel-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;  /* Change to space-around for more balanced spacing */
     margin: 20px 0;  /* Increased margin for more space between rows */
 }
 
@@ -41,6 +41,11 @@ button:hover {
     flex: 1;  /* Make each label take equal space */
     text-align: center;
     margin: 0 20px;  /* Increased margin for more space between columns */
+    padding: 10px;  /* Added padding for better spacing */
+    width: 180px;  /* Set a fixed width to accommodate long hotel names */
+    white-space: nowrap;  /* Prevent text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .dates {
@@ -53,7 +58,7 @@ button:hover {
 
 .date-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;  /* Change to space-around for more balanced spacing */
     margin: 10px 0;  /* Adjusted margin for more space between rows */
 }
 
@@ -61,6 +66,11 @@ button:hover {
     flex: 1;  /* Make each label take equal space */
     text-align: center;
     margin: 0 20px;  /* Increased margin for more space between columns */
+    padding: 10px;  /* Added padding for better spacing */
+    width: 140px;  /* Set a fixed width to accommodate long dates */
+    white-space: nowrap;  /* Prevent text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .date-label input[type="text"] {
