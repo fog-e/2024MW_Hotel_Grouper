@@ -1,18 +1,21 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
-    if request.method == 'POST':
-        name = request.form['name']
-        email = request.form['email']
-        hotels = request.form.getlist('hotel')  # Get list of selected hotels
-        dates = request.form.getlist('date')    # Get list of selected dates
-        # Process additional fields similarly
-        # Save data, send email, or process further as needed
-        return redirect('/thank_you')
     return render_template('index.html')
 
-if __name__ == '__main__':
+@app.route('/submit', methods=['POST'])
+def submit():
+    # Handle form data here
+    name = request.form.get('name')
+    email = request.form.get('email')
+    # Extract other form data like hotel choices and dates
+
+    # Logic to save data to CSV or display it can be added here
+
+    return redirect(url_for('index'))  # Redirect to home or to a confirmation page
+
+if __name__ == "__main__":
     app.run(debug=True)

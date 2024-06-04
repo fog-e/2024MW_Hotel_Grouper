@@ -2,49 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Group Booking Form</title>
+    <title>2024MW Hotel Grouper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+        .note {
+            color: gray;
+            font-style: italic;
+        }
+        .header {
+            background-color: lightgray;
+            padding: 10px;
+            text-align: center;
+        }
+        img.logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: auto;  /* Logo is shown as is, without resizing */
+        }
+    </style>
 </head>
 <body>
+    <div class="header">
+        <img src="path_to_logo.png" alt="Hotel Grouper Logo" class="logo">
+    </div>
     <h1>Hotel Group Booking Form</h1>
+    <p class="note">Tip: Feel free to use an alias and avoid entering sensitive personal information. This app is a demonstration and made by a beginner!</p>
     <form action="/submit" method="post">
-        <div>
-            <label for="name">Enter your name:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <div>
-            <label for="email">Enter your email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-            <label>Select your hotel choices:</label>
-            <div>
-                <input type="checkbox" id="motel6" name="hotel" value="Motel 6">
-                <label for="motel6">Motel 6 ($60)</label>
-                <input type="text" name="note_motel6" placeholder="Add notes (optional)">
-            </div>
-            <div>
-                <input type="checkbox" id="travelodge" name="hotel" value="Travelodge">
-                <label for="travelodge">Travelodge ($65)</label>
-                <input type="text" name="note_travelodge" placeholder="Add notes (optional)">
-            </div>
-            <!-- Repeat for other hotels -->
-            <div>
-                <input type="checkbox" id="other" name="hotel" value="Other">
-                <label for="other">Other</label>
-                <input type="text" name="other_name" placeholder="Specify other accommodation">
-            </div>
-        </div>
-        <div>
-            <label>Select the dates you are booking for (July 1-22, 2024):</label>
-            <!-- Repeat for each date -->
-            <div>
-                <input type="checkbox" id="july1" name="date" value="July 1">
-                <label for="july1">July 1</label>
-            </div>
-            <!-- Repeat for other dates -->
-        </div>
-        <button type="submit">Submit</button>
+        <label for="name">Enter your name (or alias):</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <!-- Add hotel checkboxes and other inputs as previously defined -->
+        <!-- Additional implementation for checkboxes and notes can be added here -->
+        <input type="submit" value="Submit">
     </form>
 </body>
 </html>
