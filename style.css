@@ -38,7 +38,9 @@ button:hover {
 }
 
 .hotels label {
-    margin: 0 20px;  /* Increased margin for more space between columns */
+    flex: 1;  /* Make each label take equal space */
+    text-align: center;
+    margin: 0 10px;  /* Increased margin for more space between columns */
 }
 
 .dates {
@@ -56,9 +58,9 @@ button:hover {
 }
 
 .date-label {
-    display: flex;
-    flex-direction: column;
-    margin: 0 20px;  /* Increased margin for more space between columns */
+    flex: 1;  /* Make each label take equal space */
+    text-align: center;
+    margin: 0 10px;  /* Increased margin for more space between columns */
 }
 
 .date-label input[type="text"] {
