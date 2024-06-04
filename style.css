@@ -87,7 +87,7 @@ button:hover {
     margin-right: auto;
     width: 100px;
     height: auto;
-    margin-bottom: 20px;
+    margin-top: 20px;  /* Move logo to bottom with space */
 }
 
 

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <img src="{{ url_for('static', filename='beeme.png') }}" alt="Logo" class="logo">
     <h1>2024MW Hotel Grouper</h1>
     <form action="{{ url_for('main.submit') }}" method="post">
         <label for="name">Name:</label>
@@ -86,5 +85,7 @@
             </tbody>
         </table>
     </div>
+
+    <img src="{{ url_for('static', filename='beeme.png') }}" alt="Logo" class="logo">
 </body>
 </html>
