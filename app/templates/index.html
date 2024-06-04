@@ -28,22 +28,59 @@
             <label><input type="checkbox" name="hotels" value="Hyatt Place"> Hyatt Place</label>
             <label><input type="checkbox" name="hotels" value="Marriott Hotels"> Marriott Hotels</label>
             <label><input type="checkbox" name="hotels" value="Hilton Garden Inn"> Hilton Garden Inn</label>
-            <label><input type="checkbox" name="hotels" value="Other 1"> Other 1</label>
-            <label><input type="checkbox" name="hotels" value="Other 2"> Other 2</label>
-            <label><input type="checkbox" name="hotels" value="Other 3"> Other 3</label>
+            <label>
+                <input type="checkbox" name="hotels" value="Other 1"> Other 1
+                <input type="text" name="other_hotels[]" placeholder="Enter other hotel">
+            </label>
+            <label>
+                <input type="checkbox" name="hotels" value="Other 2"> Other 2
+                <input type="text" name="other_hotels[]" placeholder="Enter other hotel">
+            </label>
+            <label>
+                <input type="checkbox" name="hotels" value="Other 3"> Other 3
+                <input type="text" name="other_hotels[]" placeholder="Enter other hotel">
+            </label>
         </div>
 
         <h2>Select Dates:</h2>
         <div class="dates">
-            <label><input type="checkbox" name="dates" value="7/1/2024"> 7/1/2024</label>
-            <label><input type="checkbox" name="dates" value="7/2/2024"> 7/2/2024</label>
-            <!-- Continue for all dates until 7/22/2024 -->
-            <label><input type="checkbox" name="dates" value="7/22/2024"> 7/22/2024</label>
+            {% for day in range(1, 23, 2) %}
+                <div class="date-row">
+                    <label>
+                        <input type="checkbox" name="dates" value="7/{{ day }}/2024"> 7/{{ day }}/2024
+                        <input type="text" name="date_notes[]" placeholder="Optional note for this day" maxlength="300">
+                    </label>
+                    {% if day+1 <= 22 %}
+                    <label>
+                        <input type="checkbox" name="dates" value="7/{{ day+1 }}/2024"> 7/{{ day+1 }}/2024
+                        <input type="text" name="date_notes[]" placeholder="Optional note for this day" maxlength="300">
+                    </label>
+                    {% endif %}
+                </div>
+            {% endfor %}
         </div>
 
         <button type="submit">Submit</button>
     </form>
+
     <h2>Hotel Popularity</h2>
-    <img src="{{ url_for('static', filename='hotel_popularity.png') }}" alt="Hotel Popularity Bar Graph">
+    <div class="hotel-popularity">
+        <table>
+            <thead>
+                <tr>
+                    <th>Hotel</th>
+                    <th>Number of Bookings</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for hotel, count in hotel_popularity.items() %}
+                <tr>
+                    <td>{{ hotel }}</td>
+                    <td>{{ count }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
