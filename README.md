@@ -22,19 +22,11 @@ The 2024MW Hotel Grouper is a Flask-based web application designed to facilitate
 5. **Review and Edit:** Adjust your selections any time.
 
 ## Data Handling
-  - The app does not guarantee confidentiality for user data. It was created by a noob. Users are encouraged to use aliases for anonymity.
+  - The app does not guarantee confidentiality for user data. It was created by a noob. 
+  - Users are encouraged to use aliases for anonymity.
   - In the best-case scenario, real-time updates on the most preferred hotels will assist in decision-making for group bookings.
 
 ## Technical Details
 - **Deployment and Accessibility:**
   - The application is deployed on an educational platform and is accessible through any standard web browser.
 
-## Running Locally (For Developers)
-If you want to run the app locally for development or testing purposes, follow these steps:
-
-### Setting Up the Environment
-1. Set up a virtual environment and install the dependencies:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   pip install -r requirements.txt

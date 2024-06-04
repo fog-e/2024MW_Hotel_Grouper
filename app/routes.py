@@ -35,4 +35,3 @@ def calculate_hotel_popularity():
         return hotel_counts
     except FileNotFoundError:
         return {}
-
