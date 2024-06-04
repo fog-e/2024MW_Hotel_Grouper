@@ -1,11 +1,12 @@
-from . import db
+class Hotel:
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(100), unique=True, nullable=False)
-    hotel_choice = db.Column(db.String(100), nullable=False)
-    date = db.Column(db.String(100), nullable=False)
-
-    def __repr__(self):
-        return f'<User {self.name}>'
+class Booking:
+    def __init__(self, name, email, notes, hotels, dates):
+        self.name = name
+        self.email = email
+        self.notes = notes
+        self.hotels = hotels
+        self.dates = dates

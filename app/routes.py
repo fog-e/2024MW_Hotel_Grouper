@@ -1,20 +1,22 @@
-from . import app, db
-from flask import render_template, request, redirect, url_for
-from .models import User
+from flask import Blueprint, render_template, request, redirect, url_for
+import csv
 
-@app.route('/')
+main = Blueprint('main', __name__)
+
+@main.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/submit', methods=['POST'])
+@main.route('/submit', methods=['POST'])
 def submit():
-    name = request.form['name']
-    email = request.form['email']
-    hotel_choice = request.form['hotel_choice']
-    date = request.form['date']
+    name = request.form.get('name')
+    email = request.form.get('email')
+    notes = request.form.get('notes')
+    hotels = request.form.getlist('hotels')
+    dates = request.form.getlist('dates')
+
+    with open('responses.csv', 'a', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow([name, email, notes, hotels, dates])
     
-    user = User(name=name, email=email, hotel_choice=hotel_choice, date=date)
-    db.session.add(user)
-    db.session.commit()
-    
-    return redirect(url_for('index'))
+    return redirect(url_for('main.index'))

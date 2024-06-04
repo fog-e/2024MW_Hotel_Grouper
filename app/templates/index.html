@@ -2,43 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2024MW Hotel Grouper</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            color: black;
-        }
-        .note {
-            color: gray;
-            font-style: italic;
-        }
-        .header {
-            background-color: lightgray;
-            padding: 10px;
-            text-align: center;
-        }
-        img.logo {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: auto;  /* Logo is shown as is, without resizing */
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="header">
-        <img src="path_to_logo.png" alt="Hotel Grouper Logo" class="logo">
-    </div>
-    <h1>Hotel Group Booking Form</h1>
-    <p class="note">Tip: Feel free to use an alias and avoid entering sensitive personal information. This app is a demonstration and made by a beginner!</p>
-    <form action="/submit" method="post">
-        <label for="name">Enter your name (or alias):</label>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="email">Enter your email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        <!-- Add hotel checkboxes and other inputs as previously defined -->
-        <!-- Additional implementation for checkboxes and notes can be added here -->
-        <input type="submit" value="Submit">
+    <h1>2024MW Hotel Grouper</h1>
+    <form action="{{ url_for('main.submit') }}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" maxlength="30" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" maxlength="30" required>
+        <label for="notes">Optional Notes:</label>
+        <textarea id="notes" name="notes" maxlength="300"></textarea>
+
+        <h2>Select Hotels:</h2>
+        <div class="hotels">
+            <label><input type="checkbox" name="hotels" value="Motel 6"> Motel 6</label>
+            <label><input type="checkbox" name="hotels" value="Travelodge"> Travelodge</label>
+            <label><input type="checkbox" name="hotels" value="Super 8"> Super 8</label>
+            <label><input type="checkbox" name="hotels" value="Microtel Inn & Suites"> Microtel Inn & Suites</label>
+            <label><input type="checkbox" name="hotels" value="Red Roof Inn"> Red Roof Inn</label>
+            <label><input type="checkbox" name="hotels" value="Best Western"> Best Western</label>
+            <label><input type="checkbox" name="hotels" value="Holiday Inn Express"> Holiday Inn Express</label>
+            <label><input type="checkbox" name="hotels" value="Hyatt Place"> Hyatt Place</label>
+            <label><input type="checkbox" name="hotels" value="Marriott Hotels"> Marriott Hotels</label>
+            <label><input type="checkbox" name="hotels" value="Hilton Garden Inn"> Hilton Garden Inn</label>
+            <label><input type="checkbox" name="hotels" value="Other 1"> Other 1</label>
+            <label><input type="checkbox" name="hotels" value="Other 2"> Other 2</label>
+            <label><input type="checkbox" name="hotels" value="Other 3"> Other 3</label>
+        </div>
+
+        <h2>Select Dates:</h2>
+        <div class="dates">
+            <label><input type="checkbox" name="dates" value="7/1/2024"> 7/1/2024</label>
+            <label><input type="checkbox" name="dates" value="7/2/2024"> 7/2/2024</label>
+            <!-- Continue for all dates until 7/22/2024 -->
+            <label><input type="checkbox" name="dates" value="7/22/2024"> 7/22/2024</label>
+        </div>
+
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>
