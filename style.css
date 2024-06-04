@@ -38,7 +38,7 @@ button:hover {
 }
 
 .hotels label {
-    margin: 5px 10px;
+    margin: 0 20px;  /* Increased margin for more space between columns */
 }
 
 .dates {
@@ -58,7 +58,7 @@ button:hover {
 .date-label {
     display: flex;
     flex-direction: column;
-    margin: 0 10px;
+    margin: 0 20px;  /* Increased margin for more space between columns */
 }
 
 .date-label input[type="text"] {
@@ -88,73 +88,4 @@ button:hover {
     width: 100px;
     height: auto;
     margin-top: 20px;  /* Move logo to bottom with space */
-}
-
-
-button:hover {
-    background-color: #45a049;
-}
-
-.hotels {
-    display: flex;
-    flex-direction: column;
-}
-
-.hotel-row {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
-}
-
-.hotels label {
-    margin: 5px 10px;
-}
-
-.dates {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-top: 20px;
-}
-
-.date-row {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
-}
-
-.date-label {
-    display: flex;
-    flex-direction: column;
-    margin: 0 10px;
-}
-
-.date-label input[type="text"] {
-    margin-top: 5px;
-}
-
-.hotel-popularity table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.hotel-popularity th, .hotel-popularity td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-.hotel-popularity th {
-    background-color: #f2f2f2;
-    text-align: left;
-}
-
-.logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100px;
-    height: auto;
-    margin-bottom: 20px;
 }
